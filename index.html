@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu Care - Excellence in Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                900: '#1e3a8a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { -webkit-font-smoothing: antialiased; }
+      .fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      .active-filter { background-color: #eff6ff; color: #1d4ed8; border-color: #3b82f6; }
+      .inactive-filter { border-color: #e5e7eb; color: #4b5563; }
+      .inactive-filter:hover { border-color: #bfdbfe; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "react-hook-form": "https://esm.sh/react-hook-form@^7.68.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white font-sans text-gray-900">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm py-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+            <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white">
+              <i data-lucide="book-open"></i>
+            </div>
+            <span class="font-bold text-2xl text-gray-800 tracking-tight">Edu Care </span> <span class="font-bold text-l text-800 tracking-tight"></span>-Powerd By NITian Space</span>
+          </div>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Home</a>
+            <a href="#notes" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Notes</a>
+            <a href="#registration" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Registration</a>
+            <a href="#about" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">About</a>
+            <a href="#contact" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">Home</a>
+          <a href="#notes" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">Notes</a>
+          <a href="#registration" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">Registration</a>
+          <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">About</a>
+          <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-primary-600 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center">
+          <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+            <span class="block">Edu Care Institute</span>
+            <span class="block text-primary-200 mt-2 text-3xl sm:text-4xl">Empowering Minds, Shaping Futures</span>
+          </h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-primary-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Comprehensive coaching for CBSE, ICSE, and Competitive Exams (JEE, NEET, SSC). 
+            Access premium study materials directly from our digital library.
+          </p>
+          <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+            <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+              <a href="#notes" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-transform hover:-translate-y-1">
+                Browse Notes
+              </a>
+              <a href="#registration" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-700 hover:bg-primary-800 md:py-4 md:text-lg md:px-10 transition-transform hover:-translate-y-1">
+                Register Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="py-20 bg-gray-50 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Study Material & Notes</h2>
+          <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+            Access high-quality chapter-wise PDF notes directly from Google Drive. Select your category to get started.
+          </p>
+        </div>
+
+        <!-- Controls -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8 border border-gray-100">
+          
+          <!-- Category Toggles -->
+          <div class="flex justify-center mb-8">
+            <div class="bg-gray-100 p-1 rounded-xl inline-flex">
+              <button onclick="setCategory('ACADEMIC')" id="btn-academic" class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all bg-white text-primary-600 shadow-sm">Academic (School)</button>
+              <button onclick="setCategory('COMPETITIVE')" id="btn-competitive" class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all text-gray-500 hover:text-gray-700">Competitive Exams</button>
+            </div>
+          </div>
+
+          <!-- Sub Filters -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" id="academic-filters">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Select Board</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="setBoard('CBSE')" id="btn-board-cbse" class="filter-btn-board active-filter px-4 py-3 rounded-lg border text-sm font-semibold transition-all">CBSE</button>
+                <button onclick="setBoard('ICSE')" id="btn-board-icse" class="filter-btn-board inactive-filter px-4 py-3 rounded-lg border text-sm font-semibold transition-all">ICSE</button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Select Class</label>
+              <select id="select-class" onchange="setClass(this.value)" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white">
+                <option value="Class 9">Class 9</option>
+                <option value="Class 10" selected>Class 10</option>
+                <option value="Class 11">Class 11</option>
+                <option value="Class 12">Class 12</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="max-w-4xl mx-auto hidden" id="competitive-filters">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Select Exam</label>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <button onclick="setExam('JEE Main')" id="btn-exam-jee" class="filter-btn-exam active-filter px-3 py-3 rounded-lg border text-sm font-semibold transition-all">JEE Main</button>
+              <button onclick="setExam('NEET')" id="btn-exam-neet" class="filter-btn-exam inactive-filter px-3 py-3 rounded-lg border text-sm font-semibold transition-all">NEET</button>
+              <button onclick="setExam('SSC')" id="btn-exam-ssc" class="filter-btn-exam inactive-filter px-3 py-3 rounded-lg border text-sm font-semibold transition-all">SSC</button>
+              <button onclick="setExam('Railway')" id="btn-exam-railway" class="filter-btn-exam inactive-filter px-3 py-3 rounded-lg border text-sm font-semibold transition-all">Railway</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Subjects -->
+          <div class="lg:col-span-4 space-y-4">
+            <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+              <i data-lucide="book" class="text-primary-600 w-5 h-5"></i> Subjects
+            </h3>
+            <div id="subjects-list" class="space-y-3">
+              <!-- JS will populate -->
+            </div>
+          </div>
+
+          <!-- Chapters -->
+          <div class="lg:col-span-8">
+             <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2 mb-4">
+              <i data-lucide="folder" class="text-primary-600 w-5 h-5"></i> 
+              <span id="chapter-header">Select a subject</span>
+            </h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 min-h-[400px] p-6">
+              <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- JS will populate -->
+                <div class="col-span-1 md:col-span-2 flex flex-col items-center justify-center text-gray-400 space-y-4 h-64">
+                   <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                  </div>
+                  <p>Select a subject from the left list to browse chapters</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold text-gray-900">Student Registration</h2>
+          <p className="mt-4 text-lg text-gray-500">
+            Join Edu Care today. Fill out the form below to register for our classes.
+          </p>
+        </div>
+
+        <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+          <!-- Success/Error Messages -->
+          <div id="form-msg" class="hidden mb-6 rounded-lg p-4 flex items-center gap-3"></div>
+
+          <form id="reg-form" onsubmit="handleRegistration(event)" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Full Name</label>
+              <input type="text" name="fullName" required class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 focus:outline-none" placeholder="John Doe">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                <input type="tel" name="mobile" required pattern="[0-9]{10}" title="Enter valid 10-digit number" class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 focus:outline-none" placeholder="9876543210">
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Email (Optional)</label>
+                <input type="email" name="email" class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 focus:outline-none" placeholder="john@example.com">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Board</label>
+                <select name="board" required class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 bg-white focus:outline-none">
+                  <option value="">Select Board</option>
+                  <option value="CBSE">CBSE</option>
+                  <option value="ICSE">ICSE</option>
+                  <option value="State Board">State Board</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Class</label>
+                <select name="grade" required class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 bg-white focus:outline-none">
+                  <option value="">Select Class</option>
+                  <option value="Class 9">Class 9</option>
+                  <option value="Class 10">Class 10</option>
+                  <option value="Class 11">Class 11</option>
+                  <option value="Class 12">Class 12</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <button type="submit" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors">
+                Complete Registration
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900">About Edu Care</h2>
+          <p class="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
+            We are dedicated to providing top-tier education with a focus on conceptual clarity and result-oriented learning.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <!-- Features Static HTML -->
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+              <i data-lucide="users"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Expert Faculty</h3>
+            <p class="text-gray-600">Learn from the best minds in the industry.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+              <i data-lucide="book-open"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Structured Notes</h3>
+            <p class="text-gray-600">Chapter-wise PDF notes linked directly to Google Drive.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+              <i data-lucide="target"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Regular Tests</h3>
+            <p class="text-gray-600">Weekly and monthly assessment tests.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Doubt Sessions</h3>
+            <p class="text-gray-600">Dedicated hours for clearing student doubts.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Expert Faculty</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-4 border border-gray-100 rounded-lg bg-gray-50">
+              <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-500 font-bold text-xl">D</div>
+              <h4 class="font-bold text-gray-900">Dr. A. Sharma</h4>
+              <p class="text-primary-600 text-sm font-medium">Physics HOD</p>
+              <p class="text-gray-500 text-xs mt-1">15+ Years Exp</p>
+            </div>
+             <div class="text-center p-4 border border-gray-100 rounded-lg bg-gray-50">
+              <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-500 font-bold text-xl">M</div>
+              <h4 class="font-bold text-gray-900">Mrs. P. Verma</h4>
+              <p class="text-primary-600 text-sm font-medium">Maths Lead</p>
+              <p class="text-gray-500 text-xs mt-1">12+ Years Exp</p>
+            </div>
+             <div class="text-center p-4 border border-gray-100 rounded-lg bg-gray-50">
+              <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-500 font-bold text-xl">M</div>
+              <h4 class="font-bold text-gray-900">Mr. R. Singh</h4>
+              <p class="text-primary-600 text-sm font-medium">Chemistry Expert</p>
+              <p class="text-gray-500 text-xs mt-1">10+ Years Exp</p>
+            </div>
+             <div class="text-center p-4 border border-gray-100 rounded-lg bg-gray-50">
+              <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-500 font-bold text-xl">M</div>
+              <h4 class="font-bold text-gray-900">Ms. K. Gupta</h4>
+              <p class="text-primary-600 text-sm font-medium">Biology Specialist</p>
+              <p class="text-gray-500 text-xs mt-1">8+ Years Exp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Contact Us</h2>
+            <p class="text-lg text-gray-500 mb-8">
+              Have questions? Reach out to us directly or visit our center.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <i data-lucide="map-pin" class="text-primary-600 mt-1 mr-3"></i>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">Address</h3>
+                  <p class="mt-1 text-gray-500">Ramnagar Rd2, Near SBI Bank, Agartala, Tripura-799002</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i data-lucide="phone" class="text-primary-600 mt-1 mr-3"></i>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">Phone</h3>
+                  <p class="mt-1 text-gray-500">+91 7005904975; +91 7005255495</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i data-lucide="mail" class="text-primary-600 mt-1 mr-3"></i>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">Email</h3>
+                  <p class="mt-1 text-gray-500">satyajit.tec@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+             <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645.1476122325553!2d91.2695317045761!3d23.83615900192802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753f5897aace40d%3A0xf52284e0687c43bd!2sNIT-ian%20Space!5e0!3m2!1sen!2sin!4v1765928733916!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <span class="text-2xl font-bold flex items-center gap-2">
+              <i data-lucide="book-open" class="text-primary-500"></i> Edu Care
+            </span>
+            <p class="text-gray-400 mt-2 text-sm">© 2024 Edu Care Institute. All rights reserved.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- DATA ---
+      // NOTE: Replace 'link' values with your actual Google Drive sharing links.
+      const generateChapters = (subject, count) => Array.from({ length: count }, (_, i) => ({
+        id: `${subject.substring(0,3)}-${i}`,
+        title: `Chapter ${i + 1}: ${subject} Concepts Part ${i + 1}`,
+        link: "#" // PLACEHOLDER: Paste your Google Drive link here
+      }));
+
+      const DATA = {
+        ACADEMIC: {
+          CBSE: {
+              "Class 9": [
+               { 
+                id: 'c9-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c9-math-1', title: 'Chapter 1: Number System', link: 'https://drive.google.com/file/d/1BvVHlKTdrxrHTp2sCrVlHF4c9sSrT7P7/view?usp=drive_link' },
+                  { id: 'c9-math-2', title: 'Chapter 2: Polynomials', link: 'https://drive.google.com/file/d/10N2PDcDMEUbN0sjpflp0CTT8E0xmb7uD/view?usp=drive_link' },
+                  { id: 'c9-math-3', title: 'Chapter 3: Coordinate Geometry', link: 'https://drive.google.com/file/d/1Z2BfmUygm-rb2Z_Maw3SFqSR3jc0Fdgg/view?usp=drive_link' },
+                  { id: 'c9-math-4', title: 'Chapter 4: Liner Equation in Two Variables', link: 'https://drive.google.com/file/d/1WlE-5oQib3BbvFx66xTM30-qpPp0RbYv/view?usp=drive_link' },
+                  { id: 'c9-math-5', title: 'Chapter 5: Euclids Geometry', link: 'https://drive.google.com/file/d/1EQy0wgAFmKdNM5jZF6ViHTwrK5lKWhYO/view?usp=drive_link' },
+                  { id: 'c9-math-6', title: 'Chapter 6: Lines and Angles', link: 'https://drive.google.com/file/d/17kDSfyqzhHLtAWDA8cp0SIQ7yYnnFoYn/view?usp=drive_link' },
+                  { id: 'c9-math-7', title: 'Chapter 7: Triangles', link: 'https://drive.google.com/file/d/1YlMy0eQQVZ2Dfz4kp7MzrqrFy1eGvSOA/view?usp=drive_link' },
+                  { id: 'c9-math-8', title: 'Chapter 8: Quadrilaterals', link: 'https://drive.google.com/file/d/1KVMO1w0q6_xeXteXUuRkO1yJIF6r00mg/view?usp=drive_link' },
+		              { id: 'c9-math-9', title: 'Chapter 9: Circles', link: 'https://drive.google.com/file/d/13biqSyg1rx-ix6NKd9OrUaMkYf_TKtDH/view?usp=drive_link' },
+                  { id: 'c9-math-10', title: 'Chapter 10: Hirons Formula', link: 'https://drive.google.com/file/d/1GFSNDUCxS3spTsegQI5rW8KEtIpgdhrr/view?usp=drive_link' },
+                  { id: 'c9-math-11', title: 'Chapter 11: Surface areas and Volumes', link: 'https://drive.google.com/file/d/1hjX5skdoxI82NiUARsB9MO8aG4GBmRIo/view?usp=drive_link' },
+                  { id: 'c9-math-12', title: 'Chapter 12: Statistics', link: 'https://drive.google.com/file/d/1knrJNksCR4c439dmrMEW4lw2eiAjrwWl/view?usp=drive_link' },
+      
+                ] 
+              },
+              { 
+                id: 'c9-sci', 
+                name: 'Science', 
+                chapters: [
+                  { id: 'c9-sci-1', title: 'Chapter 1: Matter in Our Surroundings', link: 'https://drive.google.com/file/d/1BvVHlKTdrxrHTp2sCrVlHF4c9sSrT7P7/view?usp=drive_link' },
+                  { id: 'c9-sci-2', title: 'Chapter 2: Is Matter Around Us Pure', link: 'https://drive.google.com/file/d/1_5G0WICIKf9of_n1mVVFkW99yqotgysl/view?usp=drive_link' },
+                  { id: 'c9-sci-3', title: 'Chapter 3: Atoms And Molecules', link: 'https://drive.google.com/file/d/1lC5cvVeU9C3dIjteKDRdwaH-ZZ1MX5Ws/view?usp=drive_link' },
+                  { id: 'c9-sci-4', title: 'Chapter 4: Structure of The Atom', link: 'https://drive.google.com/file/d/1UXrWFdRuKwY-Ww35OOvy0UsOWIvdpupE/view?usp=drive_link' },
+                  { id: 'c9-sci-5', title: 'Chapter 5: The Fundamental Units of Life', link: 'https://drive.google.com/file/d/1xHlapf5bEY83tK26QsYvsEwtaNqb7eOI/view?usp=drive_link' },
+                  { id: 'c9-sci-6', title: 'Chapter 6: Tissues', link: 'https://drive.google.com/file/d/1bqxs970KMUGJLLV5zjlZzyHonVB665xP/view?usp=drive_link' },
+                  { id: 'c9-sci-7', title: 'Chapter 7: Motion', link: 'https://drive.google.com/file/d/1qF4jj6TKRATvEHY3cBM81TLUnRs3qpXG/view?usp=drive_link' },
+                  { id: 'c9-sci-8', title: 'Chapter 8: Force & Laws of Moton', link: 'https://drive.google.com/file/d/1SSjYfhM8Od2AICJXh87jBwy9XmLu46hq/view?usp=drive_link' },
+		              { id: 'c9-sci-9', title: 'Chapter 9: Gravitation', link: 'https://drive.google.com/file/d/1MXWpr9rBpmb1oWxPo07q0J9P6a5AXW2f/view?usp=drive_link' },
+                  { id: 'c9-sci-10', title: 'Chapter 10: Work & Energy', link: 'https://drive.google.com/file/d/1JNPCYp6rZdS4DYwm695MsuhWWrUX3aBZ/view?usp=drive_link' },
+                  { id: 'c9-sci-11', title: 'Chapter 11: Sound', link: 'https://drive.google.com/file/d/1up_B_0dIey2A1sWqMgLU57RvH-Ag7Nc1/view?usp=drive_link' },
+                  { id: 'c9-sci-12', title: 'Chapter 12: Improve in Food Resources', link: 'https://drive.google.com/file/d/1jOJYDo3pjrb_qlAt_f3KbXPT19dPUoB4/view?usp=drive_link' },
+      
+                ] 
+              },
+            ],
+
+            "Class 10": [
+              { 
+                id: 'c10-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c10-math-1', title: 'Chapter 1: Real Numbers', link: 'https://drive.google.com/file/d/1tWX4Rtzpy6tcIjFT__boKvgCq4OcEKHw/view?usp=drive_link' },
+                  { id: 'c10-math-2', title: 'Chapter 2: Polynomials', link: 'https://drive.google.com/file/d/197_uYz1AfBVDxkvac201ZlteiUq8UWba/view?usp=drive_link' },
+                  { id: 'c10-math-3', title: 'Chapter 3: Pair of Linear Equations', link: 'https://drive.google.com/file/d/1Ui0YW5rBLbz24LNN1KdVmcnjkXYiyiMJ/view?usp=drive_link' },
+                  { id: 'c10-math-4', title: 'Chapter 4: Quadratic Equations', link: 'https://drive.google.com/file/d/1J0obvq94XYS_ZbK3VdOsb2g4qvyHPkRS/view?usp=drive_link' },
+                  { id: 'c10-math-5', title: 'Chapter 5: Arithmetic Progressions', link: 'https://drive.google.com/file/d/17hK_8a3qibFqB-8TxTJKvN3T1bM1wqyp/view?usp=drive_link' },
+                  { id: 'c10-math-6', title: 'Chapter 6: Triangles', link: 'https://drive.google.com/file/d/1z_mwSvukR997hz4s5fjljvVS41XJIMdB/view?usp=drive_link' },
+                  { id: 'c10-math-7', title: 'Chapter 7: Coordinate Geometry', link: 'https://drive.google.com/file/d/1NI0U8ASLXgYBGymwxGJykrz0PCs5fGA5/view?usp=drive_link' },
+                  { id: 'c10-math-8', title: 'Chapter 8: Introduction to Trigonometry', link: 'https://drive.google.com/file/d/11zgQAwjkXekafVlD_xP2FIWD_NGknKDZ/view?usp=drive_link' },
+                  { id: 'c10-math-9', title: 'Chapter 9: Application of Trigonometry', link: 'https://drive.google.com/file/d/1g18HBK5vi-WE3fdllEqhE3jw8Lwei7RE/view?usp=drive_link' },
+                  { id: 'c10-math-10', title: 'Chapter 10: Circles', link: 'https://drive.google.com/file/d/1srDaN0LHJd0beUApujx2pAPAUiUeJXVf/view?usp=drive_link' },
+                  { id: 'c10-math-11', title: 'Chapter 11: Area Related Circles', link: 'https://drive.google.com/file/d/1LfUt0F0eWiT_egFlcuH0xNvBmRr_2Hvx/view?usp=drive_link' },
+                  { id: 'c10-math-12', title: 'Chapter 12: Surface Area Volume', link: 'https://drive.google.com/file/d/1rTUeXdJPcZDPMcX3s1-lquNpn0gKTJMU/view?usp=drive_link' },
+                  { id: 'c10-math-13', title: 'Chapter 13: Statistics', link: 'https://drive.google.com/file/d/14C1s9V2SaaE_IKGYwTwXqSymiiIw24Qz/view?usp=drive_link' },
+                  { id: 'c10-math-14', title: 'Chapter 14: Probability', link: 'https://drive.google.com/file/d/1xx-06gPf3C7GLFJmEtLfy8vTV3gTjlM7/view?usp=drive_link' },
+                ] 
+              },
+              { 
+                id: 'c10-sci', 
+                name: 'Science', 
+                chapters: [
+                  { id: 'c10-sci-1', title: 'Chapter 1: Chemical Reactions & Equations', link: 'https://drive.google.com/file/d/1vx0WzCQjOzjMKs9O8oc_Ea9UlMjRgvkX/view?usp=drive_link' },
+                  { id: 'c10-sci-2', title: 'Chapter 2: Acid, Base & Salt', link: 'https://drive.google.com/file/d/1B1GUt_A-PngRGIyE_7fP9ejXgVuEat-q/view?usp=drive_link' },
+                  { id: 'c10-sci-3', title: 'Chapter 3: Metals & Non-metals', link: 'https://drive.google.com/file/d/1pWRMOsMWtBfh6tgYvbDn8EVdUjhAFuL3/view?usp=drive_link' },
+                  { id: 'c10-sci-4', title: 'Chapter 4: Carbon & Its Compound', link: 'https://drive.google.com/file/d/1g8b4tQ4Bzz1cx92X04z7s01wgqLsEo1S/view?usp=drive_link' },
+                  { id: 'c10-sci-5', title: 'Chapter 5: Life Process', link: 'https://drive.google.com/file/d/1PRS_Ben0Xe1SSOvwDNrNgKVdJEiB3zsh/view?usp=drive_link' },
+                  { id: 'c10-sci-6', title: 'Chapter 6: Control & Coordination', link: 'https://drive.google.com/file/d/1kys_-GHuUELM4nzSQvrS3BDJhFq1EVqc/view?usp=drive_link' },
+                  { id: 'c10-sci-7', title: 'Chapter 7: How do organisms reproduces', link: 'https://drive.google.com/file/d/178X-jYckhFWhfv-g8K0MNdBbGAPEMsh2/view?usp=drive_link' },
+                  { id: 'c10-sci-8', title: 'Chapter 8: Heredity & Evolution', link: 'https://drive.google.com/file/d/1MoIF4tWzD4o2x1FJzjY-UUOHMSyh3ii_/view?usp=drive_link' },
+                  { id: 'c10-sci-9', title: 'Chapter 9: Light: Reflection & Refraction', link: 'https://drive.google.com/file/d/1evyZExFYyC0SjYVbr-raBwrC7UnFnRqR/view?usp=drive_link' },
+                  { id: 'c10-sci-10', title: 'Chapter 10: Human Eye', link: 'https://drive.google.com/file/d/1EOrSb5yCFzuPG4pKMX2W66rykd_bK12B/view?usp=drive_link' },
+                  { id: 'c10-sci-11', title: 'Chapter 11: Electricity', link: 'https://drive.google.com/file/d/1fn-7Je8XEKlpCdQyGOVqLHB_FMg62zGl/view?usp=drive_link' },
+                  { id: 'c10-sci-12', title: 'Chapter 12: Magnetic Effect of Current', link: 'https://drive.google.com/file/d/1UMy7UO5X45186kdCGRDtdcPD71luq47I/view?usp=drive_link' },
+                  { id: 'c10-sci-13', title: 'Chapter 13: Our Environment', link: 'https://drive.google.com/file/d/1ecTJBZuMccIXWcgzmauNmpA9MOEO3kCq/view?usp=drive_link' },
+
+                ] 
+              },
+            ],
+
+            "Class 11": [
+              { id: 'c11-phy', 
+                name: 'Physics', 
+                chapters: [
+                  { id: 'c11-phy-1', title: 'Chapter 1: Unit & Dimension', link: 'https://drive.google.com/file/d/1lkj_QCZ3Xdj4jjpaZHcxdap1kxC9rmlM/view?usp=drive_link' },
+                  { id: 'c11-phy-2', title: 'Chapter 2: Motion in a Straight Line', link: 'https://drive.google.com/file/d/1zfM5CSlkH0RmgZzEhotKNSsnBSo6rtuD/view?usp=drive_link' },
+                  { id: 'c11-phy-3', title: 'Chapter 3: Motion in a Plane', link: 'https://drive.google.com/file/d/1UaPPZ4zQqjc4i24VAJq1RdTUn3VtIhFY/view?usp=drive_link' },
+                  { id: 'c11-phy-4', title: 'Chapter 4: Laws of Motion', link: 'https://drive.google.com/file/d/1M_I8q-VL08DKa6Ziv1gyYQJgplTR9bpu/view?usp=drive_link' },
+                  { id: 'c11-phy-5', title: 'Chapter 5: Work Energy & Power', link: 'https://drive.google.com/file/d/1HDp_gBaYENgOZjI1bX8pm9AqlSwPkNVI/view?usp=drive_link' },
+                  { id: 'c11-phy-6', title: 'Chapter 6: System of Particles', link: 'https://drive.google.com/file/d/1bZsBUQn7UzY3mgRuduXsSOM61rgqTCB4/view?usp=drive_link' },
+                  { id: 'c11-phy-7', title: 'Chapter 7: Gravitation', link: 'https://drive.google.com/file/d/1fno8xB6LvAO66ZMxvN1aJYoBmnEHNTYd/view?usp=drive_link' },
+                  { id: 'c11-phy-8', title: 'Chapter 8: Mechanical Properties of Solids', link: 'https://drive.google.com/file/d/1sP_HXeAnvaXlW1OZoQQ1eQnQuHblxWFD/view?usp=drive_link' },
+                  { id: 'c11-phy-9', title: 'Chapter 9: Mechanical Properties of Fluids', link: 'https://drive.google.com/file/d/1FB4yNOQMNIsERGAtIPnhkrAEGX_JrEtX/view?usp=drive_link' },
+                  { id: 'c11-phy-10', title: 'Chapter 10: Thermal Properties of Matter', link: 'https://drive.google.com/file/d/1aduyW-UlgfcTN83WVY6Pyupjc1pX0fNS/view?usp=drive_link' },
+                  { id: 'c11-phy-11', title: 'Chapter 11: Thermodynamics', link: 'https://drive.google.com/file/d/1G42pdreZn03c4e4m_KhYHhH7X1e188Qa/view?usp=drive_link' },
+                  { id: 'c11-phy-12', title: 'Chapter 12: Kinetic Theory of Gases', link: 'https://drive.google.com/file/d/1PXh3VZJ-kKnAyeEFhsxxK28iE9q1Bgp8/view?usp=drive_link' },
+                  { id: 'c11-phy-13', title: 'Chapter 13: Oscillations', link: 'https://drive.google.com/file/d/1eaKFWm0SJ8SvNRLZTtBHlNJOme4so5Z5/view?usp=drive_link' },
+                  { id: 'c11-phy-14', title: 'Chapter 14: Waves', link: 'https://drive.google.com/file/d/1FXpock0B5KebJL5CsfL6vOj8N3wS0Gi8/view?usp=drive_link' },
+
+                ] 
+              },
+              { id: 'c11-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c11-math-1', title: 'Chapter 1: Sets', link: 'https://drive.google.com/file/d/1dKVazEyEKAfQjWsK8EGWldFXFJXTqvOh/view?usp=drive_link' },
+                  { id: 'c11-math-2', title: 'Chapter 2: Relations & Functions', link: 'https://drive.google.com/file/d/1_GjHlHOqWH0mmRMIn0zAUhxlYk26ranJ/view?usp=drive_link' },
+                  { id: 'c11-math-3', title: 'Chapter 3: Trigonometric Functions', link: 'https://drive.google.com/file/d/1RDh9nODPLt0sOmFxucF4D2L09REKnxjB/view?usp=drive_link' },
+                  { id: 'c11-math-4', title: 'Chapter 4: Complex Number', link: 'https://drive.google.com/file/d/1rTJccjgaiVCjfuvqSk3-R1PVAFpO72U5/view?usp=drive_link' },
+                  { id: 'c11-math-5', title: 'Chapter 5: Linear Inequations', link: 'https://drive.google.com/file/d/1htPZuyrEJLVm-3If3W-RDORsvIKUL1Jo/view?usp=drive_link' },
+                  { id: 'c11-math-6', title: 'Chapter 6: Permutations & Combinations', link: 'https://drive.google.com/file/d/1sb9MtoH9kpNDznL5B1jaAYiZtsfq2b0c/view?usp=drive_link' },
+                  { id: 'c11-math-7', title: 'Chapter 7: Binomial Theorem', link: 'https://drive.google.com/file/d/1kY79KTrfaWyXhWMozW7eAFPpsW1pN97q/view?usp=drive_link' },
+                  { id: 'c11-math-8', title: 'Chapter 8: Sequences & Series', link: 'https://drive.google.com/file/d/116pXbF4IZM-93yFCUBxshITvWJHHhz7Z/view?usp=drive_link' },
+                  { id: 'c11-math-9', title: 'Chapter 9: Straight Line', link: 'https://drive.google.com/file/d/1O9W4hFOuBLHlqA3BKW28lElg7o7gLxHQ/view?usp=drive_link' },
+                  { id: 'c11-math-10', title: 'Chapter 10: Conic Sections', link: 'https://drive.google.com/file/d/1sd4cotMpGwuyqb29Z2PzyT4zwGBpI8oL/view?usp=drive_link' },
+                  { id: 'c11-math-11', title: 'Chapter 11: Introduction to 3D', link: 'https://drive.google.com/file/d/1w5ZyH3aBQDPw7ZNbUs2b7HGqa8dbrV_X/view?usp=drive_link' },
+                  { id: 'c11-math-12', title: 'Chapter 12: Limits & Derivatives', link: 'https://drive.google.com/file/d/1EtQ8MGF04JcsrQS0dxx0uuEIpQW32QET/view?usp=drive_link' },
+                  { id: 'c11-math-13', title: 'Chapter 13: Statistics', link: 'https://drive.google.com/file/d/1qecN6wsKqy4G4mjCTMn_jpdYHE7bhvFn/view?usp=drive_link' },
+                  { id: 'c11-math-14', title: 'Chapter 14: Probability', link: 'https://drive.google.com/file/d/1oPOTW-wD3D06gBUupBeya6Xx9NPTUXNL/view?usp=drive_link' },
+
+                ] 
+               },
+              { id: 'c11-chem', name: 'Chemistry', chapters: generateChapters('Chemistry', 12) }
+            ],
+
+            "Class 12": [
+              { id: 'c12-phy', 
+                name: 'Physics', 
+                chapters: [
+                  { id: 'c12-phy-1', title: 'Chapter 1: Electric Charges & Fields', link: 'https://drive.google.com/file/d/11nDeJWl3TX6w9K8_hNMjUjQ4mmidfPBD/view?usp=drive_link' },
+                  { id: 'c12-phy-2', title: 'Chapter 2: Electrostatic Potential & Charges', link: 'https://drive.google.com/file/d/1jpSxAcf6PIEXUmLRkIQVBmVgH2Z8me6F/view?usp=drive_link' },
+                  { id: 'c12-phy-3', title: 'Chapter 3: Current Electricity', link: 'https://drive.google.com/file/d/1uJS-LcLnyPpdP1tqxTJvE535Ug5bd4mk/view?usp=drive_link' },
+                  { id: 'c12-phy-4', title: 'Chapter 4: Moving Charges & Magnetism', link: 'https://drive.google.com/file/d/1m4fYCyS1RV81rz3IC9DxiTikEBYZ4hza/view?usp=drive_link' },
+                  { id: 'c12-phy-5', title: 'Chapter 5: Magnetism & Matter', link: 'https://drive.google.com/file/d/10uQx2Vj3J3HebtYzAehqbvc6JUg1nB4r/view?usp=drive_link' },
+                  { id: 'c12-phy-6', title: 'Chapter 6: Electro Magnetic Induction', link: 'https://drive.google.com/file/d/1pnO8Z-PKy-Z1XKZWK7buvARVB1NAFKpx/view?usp=drive_link' },
+                  { id: 'c12-phy-7', title: 'Chapter 7: Alternating Current', link: 'https://drive.google.com/file/d/1j58yoQNYLWDqhJmz9-0L_m-UQMImZIbc/view?usp=drive_link' },
+                  { id: 'c12-phy-8', title: 'Chapter 8: Electro Magnetic Waves', link: 'https://drive.google.com/file/d/13DaOaE6vVdUI_LXJ_ByYuf2x3sZvBNRn/view?usp=drive_link' },
+                  { id: 'c12-phy-9', title: 'Chapter 9: Ray Optics', link: 'https://drive.google.com/file/d/19cyXV-4eSFbyt223bYkhPAiWiGS54aaB/view?usp=drive_link' },
+                  { id: 'c12-phy-10', title: 'Chapter 10: Wave Optics', link: 'https://drive.google.com/file/d/1HbsNyT5cHOU9DOyWpa-n-X55XZEDVzny/view?usp=drive_link' },
+                  { id: 'c12-phy-11', title: 'Chapter 11: Dual Nature of Radiations & Light', link: 'https://drive.google.com/file/d/1sMimpDq5A_rRiCUTV9-9fepVJbOU8RoI/view?usp=drive_link' },
+                  { id: 'c12-phy-12', title: 'Chapter 12: Atoms', link: 'https://drive.google.com/file/d/11RwjBm5auUJqKFW8DjOMStSIgoMBZliH/view?usp=drive_link' },
+                  { id: 'c12-phy-13', title: 'Chapter 13: Nuclei', link: 'https://drive.google.com/file/d/1qB-6UgzDSW_iRweccPr9EROQWAphl42k/view?usp=drive_link' },
+                  { id: 'c12-phy-14', title: 'Chapter 14: Semiconductor', link: 'https://drive.google.com/file/d/1y3g8fOYKx15x9ABcLhTiEUvqDkhU3eyU/view?usp=drive_link' },
+
+                ]
+               },
+              { id: 'c12-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c12-math-1', title: 'Chapter 1: Relations & Functions', link: 'https://drive.google.com/file/d/1WYrN3Sdtq7IPimFydExlVRsk6TtVHPE2/view?usp=drive_link' },
+                  { id: 'c12-math-2', title: 'Chapter 2: Invers Trigonometric Functions', link: 'https://drive.google.com/file/d/1SKbzV445ztakiE3Mxb297VMnmXR13uXV/view?usp=drive_link' },
+                  { id: 'c12-math-3', title: 'Chapter 3: Matrices', link: 'https://drive.google.com/file/d/1UVdo1_jQzgE_qavodm3_4vuvjKUfRylb/view?usp=drive_link' },
+                  { id: 'c12-math-4', title: 'Chapter 4: Determinants', link: 'https://drive.google.com/file/d/12bNjJuqu4Ji-IJeUokbQ6Tsfysr0g_pq/view?usp=drive_link' },
+                  { id: 'c12-math-5', title: 'Chapter 5: Continuity & Differentiability', link: 'https://drive.google.com/file/d/1bzpJzoT4tzrZTZYa3CyvL4-v9dN3_w_r/view?usp=drive_link' },
+                  { id: 'c12-math-6', title: 'Chapter 6: Applications of derivatives', link: 'https://drive.google.com/file/d/1_9VUTKC-I_zjnaXK2sZFBC_iBNhYPbAB/view?usp=drive_link' },
+                  { id: 'c12-math-7', title: 'Chapter 7: Integrations', link: 'https://drive.google.com/file/d/1-Dh9gYHabXFXLPyVucHOtv41Rpu0cqa6/view?usp=drive_link' },
+                  { id: 'c12-math-8', title: 'Chapter 8: Applications of Integrations', link: 'https://drive.google.com/file/d/1mQkCOCvxWLWx2jWJ_P4xMk8qCKNMG9ej/view?usp=drive_link' },
+                  { id: 'c12-math-9', title: 'Chapter 9: Differential Equations', link: 'https://drive.google.com/file/d/1URXEeGn2FWCGOZtyNmRTftRBAQ6gQEEm/view?usp=drive_link' },
+                  { id: 'c12-math-10', title: 'Chapter 10: Vectors', link: 'https://drive.google.com/file/d/1GwSbsHibg9lHmob_hcmv74jekCOh7vzv/view?usp=drive_link' },
+                  { id: 'c12-math-11', title: 'Chapter 11: 3-Dimension', link: 'https://drive.google.com/file/d/1n7LPsLn70wVc_ZVaZhyP-bo4UOqm1URj/view?usp=drive_link' },
+                  { id: 'c12-math-12', title: 'Chapter 12: Linear Programming', link: 'https://drive.google.com/file/d/13SZZQUCxrOKN6rS5wIAjqJDTHsMg_a7T/view?usp=drive_link' },
+                  { id: 'c12-math-13', title: 'Chapter 13: Probability', link: 'https://drive.google.com/file/d/1CS6z--bh0PmvQO9V7JgRt-amAvSJJMW-/view?usp=drive_link' },
+
+
+                ] 
+
+               },
+              { id: 'c12-chem', name: 'Chemistry', chapters: generateChapters('Chemistry', 16) },
+
+              { id: 'c12-bio', name: 'Biology', chapters: generateChapters('Biology', 12) }
+            ]
+
+
+
+
+          },
+          ICSE: {
+            "Class 9": [
+               { id: 'i9-math', name: 'Mathematics', chapters: generateChapters('Math', 10) },
+               { id: 'i9-sci', name: 'Science', chapters: generateChapters('Science', 12) }
+            ],
+            "Class 10": [
+               { id: 'i10-math', name: 'Mathematics', chapters: generateChapters('Math', 12) },
+               { id: 'i10-phy', name: 'Physics', chapters: generateChapters('Physics', 10) }
+            ],
+            "Class 11": [
+              { id: 'i11-phy', name: 'Physics', chapters: generateChapters('Physics', 14) },
+              { id: 'i11-math', name: 'Mathematics', chapters: generateChapters('Mathematics', 14) }
+            ]
+          }
+        },
+        COMPETITIVE: {
+          "JEE Main": [
+            { id: 'jee-phy', name: 'Physics', chapters: generateChapters('Mechanics', 20) },
+            { id: 'jee-chem', name: 'Chemistry', chapters: generateChapters('Organic', 20) },
+            { id: 'jee-math', name: 'Mathematics', chapters: generateChapters('Calculus', 20) }
+          ],
+          "NEET": [
+            { id: 'neet-bio', name: 'Biology', chapters: generateChapters('Zoology', 25) },
+            { id: 'neet-phy', name: 'Physics', chapters: generateChapters('Physics', 18) }
+          ],
+          "SSC": [
+            { id: 'ssc-quant', name: 'Quant Aptitude', chapters: generateChapters('Quant', 15) },
+            { id: 'ssc-reason', name: 'Reasoning', chapters: generateChapters('Reasoning', 15) }
+          ],
+          "Railway": [
+            { id: 'rrb-gs', name: 'General Science', chapters: generateChapters('Science', 20) },
+             { id: 'rrb-math', name: 'Mathematics', chapters: generateChapters('Math', 15) }
+          ]
+        }
+      };
+
+      // --- STATE ---
+      let state = {
+        category: 'ACADEMIC', // ACADEMIC | COMPETITIVE
+        board: 'CBSE',
+        class: 'Class 10',
+        exam: 'JEE Main',
+        selectedSubject: null
+      };
+
+      // --- INITIALIZATION ---
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        render();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+        
+        // Scroll Effect
+        window.addEventListener('scroll', () => {
+          const nav = document.getElementById('navbar');
+          if (window.scrollY > 20) {
+            nav.classList.add('shadow-md', 'py-2');
+            nav.classList.remove('py-4');
+          } else {
+            nav.classList.remove('shadow-md', 'py-2');
+            nav.classList.add('py-4');
+          }
+        });
+      });
+
+      // --- ACTIONS ---
+      function setCategory(cat) {
+        state.category = cat;
+        state.selectedSubject = null;
+        render();
+      }
+
+      function setBoard(board) {
+        state.board = board;
+        state.selectedSubject = null;
+        render();
+      }
+
+      function setClass(cls) {
+        state.class = cls;
+        state.selectedSubject = null;
+        render();
+      }
+
+      function setExam(exam) {
+        state.exam = exam;
+        state.selectedSubject = null;
+        render();
+      }
+
+      function selectSubject(subjectId) {
+        // Find subject object
+        const subjects = getSubjectsList();
+        state.selectedSubject = subjects.find(s => s.id === subjectId);
+        renderChapters();
+        renderSubjects(); // Re-render to highlight active subject
+      }
+
+      function getSubjectsList() {
+        if (state.category === 'ACADEMIC') {
+          return DATA.ACADEMIC[state.board]?.[state.class] || [];
+        } else {
+          return DATA.COMPETITIVE[state.exam] || [];
+        }
+      }
+
+      // --- RENDERING ---
+      function render() {
+        renderFilters();
+        renderSubjects();
+        renderChapters();
+      }
+
+      function renderFilters() {
+        // Toggle Category Buttons
+        const btnAcad = document.getElementById('btn-academic');
+        const btnComp = document.getElementById('btn-competitive');
+        const filtersAcad = document.getElementById('academic-filters');
+        const filtersComp = document.getElementById('competitive-filters');
+
+        if (state.category === 'ACADEMIC') {
+          btnAcad.className = "px-20 py-5 rounded-lg text-sm font-bold transition-all bg-white text-primary-600 shadow-sm";
+          btnComp.className = "px-20 py-5 rounded-lg text-sm font-bold transition-all text-gray-500 hover:text-gray-700";
+          filtersAcad.classList.remove('hidden');
+          filtersComp.classList.add('hidden');
+        } else {
+          btnComp.className = "px-20 py-5 rounded-lg text-sm font-bold transition-all bg-white text-primary-600 shadow-sm";
+          btnAcad.className = "px-20 py-5 rounded-lg text-sm font-bold transition-all text-gray-500 hover:text-gray-700";
+          filtersAcad.classList.add('hidden');
+          filtersComp.classList.remove('hidden');
+        }
+
+        // Render Board Buttons
+        document.getElementById('btn-board-cbse').className = `px-4 py-3 rounded-lg border text-sm font-semibold transition-all ${state.board === 'CBSE' ? 'active-filter' : 'inactive-filter'}`;
+        document.getElementById('btn-board-icse').className = `px-4 py-3 rounded-lg border text-sm font-semibold transition-all ${state.board === 'ICSE' ? 'active-filter' : 'inactive-filter'}`;
+
+        // Render Exam Buttons
+        ['JEE Main', 'NEET', 'SSC', 'Railway'].forEach(e => {
+            const btn = document.getElementById(`btn-exam-${e.toLowerCase().replace(' ', '')}`);
+            if(btn) btn.className = `px-3 py-3 rounded-lg border text-sm font-semibold transition-all ${state.exam === e ? 'active-filter' : 'inactive-filter'}`;
+        });
+      }
+
+      function renderSubjects() {
+        const listContainer = document.getElementById('subjects-list');
+        const subjects = getSubjectsList();
+        
+        if (subjects.length === 0) {
+            listContainer.innerHTML = '<div class="bg-yellow-50 text-yellow-800 p-4 rounded-lg text-sm border border-yellow-200">No subjects found.</div>';
+            return;
+        }
+
+        listContainer.innerHTML = subjects.map(sub => `
+          <button onclick="selectSubject('${sub.id}')" class="w-full text-left px-5 py-4 rounded-xl transition-all duration-200 flex items-center justify-between group ${state.selectedSubject?.id === sub.id ? 'bg-primary-600 text-white shadow-lg' : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200'}">
+            <span class="font-medium">${sub.name}</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 transition-transform ${state.selectedSubject?.id === sub.id ? 'translate-x-1' : ''}"></i>
+          </button>
+        `).join('');
+        lucide.createIcons();
+      }
+
+      function renderChapters() {
+        const header = document.getElementById('chapter-header');
+        const list = document.getElementById('chapters-list');
+        
+        if (!state.selectedSubject) {
+            header.innerText = 'Select a subject';
+            list.innerHTML = `
+                <div class="col-span-1 md:col-span-2 flex flex-col items-center justify-center text-gray-400 space-y-4 h-64">
+                   <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                  </div>
+                  <p>Select a subject from the left list to browse chapters</p>
+                </div>
+            `;
+            lucide.createIcons();
+            return;
+        }
+
+        header.innerText = `${state.selectedSubject.name} Chapters`;
+        list.innerHTML = state.selectedSubject.chapters.map((ch, idx) => `
+            <a href="${ch.link}" target="_blank" class="flex items-start p-4 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50/50 transition-colors group fade-in" style="animation-delay: ${idx * 0.05}s">
+                <div class="flex-shrink-0 mt-1 mr-3">
+                     <i data-lucide="file-text" class="text-primary-400 group-hover:text-primary-600 w-5 h-5"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-sm font-semibold text-gray-900 group-hover:text-primary-700">${ch.title}</h4>
+                    <span class="text-xs text-gray-500 mt-1 inline-flex items-center gap-1 group-hover:text-primary-500">
+                        View PDF <i data-lucide="download" class="w-3 h-3"></i>
+                    </span>
+                </div>
+            </a>
+        `).join('');
+        lucide.createIcons();
+      }
+
+      // --- REGISTRATION ---
+      function handleRegistration(e) {
+        e.preventDefault();
+        const form = e.target;
+        const msgDiv = document.getElementById('form-msg');
+        
+        // Simple Validation
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Save to LocalStorage
+        try {
+            const existing = JSON.parse(localStorage.getItem('edu_care_students') || '[]');
+            existing.push({ ...data, date: new Date().toISOString() });
+            localStorage.setItem('edu_care_students', JSON.stringify(existing));
+            
+            // Show Success
+            msgDiv.className = "mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3 block";
+            msgDiv.innerHTML = `
+                <i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i>
+                <div>
+                    <h4 class="font-bold text-green-800">Registration Successful!</h4>
+                    <p class="text-sm text-green-700">Your details have been saved locally.</p>
+                </div>
+            `;
+            form.reset();
+        } catch(err) {
+             // Show Error
+            msgDiv.className = "mb-6 bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3 block";
+             msgDiv.innerHTML = `
+                <i data-lucide="alert-circle" class="text-red-600 w-5 h-5"></i>
+                <div>
+                    <h4 class="font-bold text-red-800">Error</h4>
+                    <p class="text-sm text-red-700">Could not save registration.</p>
+                </div>
+            `;
+        }
+        lucide.createIcons();
+        setTimeout(() => msgDiv.classList.add('hidden'), 5000);
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
