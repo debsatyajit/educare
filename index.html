@@ -103,12 +103,12 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center">
           <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-            <span class="block">Edu Care</span>
+            <span class="block">Edu Care Institute</span>
             <span class="block text-primary-200 mt-2 text-3xl sm:text-4xl">Empowering Minds, Shaping Futures</span>
           </h1>
           <p class="mt-3 max-w-md mx-auto text-base text-primary-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Comprehensive coaching for CBSE, ICSE, and Competitive Exams (JEE, NEET, SSC). 
-            Access premium study materials.
+            Access premium study materials directly from our digital library.
           </p>
           <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
             <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
@@ -130,23 +130,23 @@
         <div class="text-center mb-12">
           <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Study Material & Notes</h2>
           <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            Access high-quality chapter-wise PDF notes . Select your category to get started.
+            Access high-quality chapter-wise PDF notes directly from Google Drive. Select your category to get started.
           </p>
         </div>
 
         <!-- Controls -->
-        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8 border border-gray-100">
+        <div class="bg-white rounded-2xl shadow-xl p-2 mb-2 border border-gray-100">
           
           <!-- Category Toggles -->
           <div class="flex justify-center mb-8">
-            <div class="bg-gray-100 p-1 rounded-xl inline-flex">
+            <div class="bg-gray-10 p-1 rounded-xl inline-flex">
               <button onclick="setCategory('ACADEMIC')" id="btn-academic" class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all bg-white text-primary-600 shadow-sm">Academic (School)</button>
               <button onclick="setCategory('COMPETITIVE')" id="btn-competitive" class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all text-gray-500 hover:text-gray-700">Competitive Exams</button>
             </div>
           </div>
 
           <!-- Sub Filters -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl mx-auto" id="academic-filters">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" id="academic-filters">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Select Board</label>
               <div class="grid grid-cols-2 gap-2">
@@ -279,7 +279,7 @@
     <section id="about" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl font-extrabold text-gray-900">About Us</h2>
+          <h2 class="text-3xl font-extrabold text-gray-900">About Edu Care</h2>
           <p class="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
             We are dedicated to providing top-tier education with a focus on conceptual clarity and result-oriented learning.
           </p>
@@ -319,17 +319,14 @@
 
         <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
           <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Expert Faculty</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
             <div class="text-center p-4 border border-gray-100 rounded-lg bg-gray-50">
               <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-500 font-bold text-xl">D</div>
-              <h4 class="font-bold text-gray-900">Er. Satyajit Deb </h4>
+              <h4 class="font-bold text-gray-900">Er. Satyajit Deb</h4>
               <p class="text-primary-600 text-sm font-medium">Physics & Mathematics</p>
-			  <p class="text-primary-600 text-sm font-medium">NIT, Agartala, CSE</p>
+              <p class="text-primary-600 text-sm font-medium">NIT, Agartala, CSE</p>
               <p class="text-gray-500 text-xs mt-1">15+ Years Exp</p>
             </div>
-            
-             
-             
           </div>
         </div>
       </div>
@@ -389,11 +386,10 @@
             <span class="text-2xl font-bold flex items-center gap-2">
               <i data-lucide="book-open" class="text-primary-500"></i> Edu Care
             </span>
-            <p class="text-gray-400 mt-2 text-sm">© 2024 Edu Care Institute. All rights reserved.</p>
+            <p class="text-gray-400 mt-2 text-sm">© 2015 NITian Space. All rights reserved.</p>
           </div>
           <div class="flex space-x-6">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">Deveoped By Er. Satyajit Deb</a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors"></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Developed By Er. Satyajit Deb</a>
           </div>
         </div>
       </div>
@@ -600,9 +596,97 @@
                { id: 'i10-phy', name: 'Physics', chapters: generateChapters('Physics', 10) }
             ],
             "Class 11": [
-              { id: 'i11-phy', name: 'Physics', chapters: generateChapters('Physics', 14) },
-              { id: 'i11-math', name: 'Mathematics', chapters: generateChapters('Mathematics', 14) }
+              { id: 'c11-phy', 
+                name: 'Physics', 
+                chapters: [
+                  { id: 'c11-phy-1', title: 'Chapter 1: Unit & Dimension', link: 'https://drive.google.com/file/d/1lkj_QCZ3Xdj4jjpaZHcxdap1kxC9rmlM/view?usp=drive_link' },
+                  { id: 'c11-phy-2', title: 'Chapter 2: Motion in a Straight Line', link: 'https://drive.google.com/file/d/1zfM5CSlkH0RmgZzEhotKNSsnBSo6rtuD/view?usp=drive_link' },
+                  { id: 'c11-phy-3', title: 'Chapter 3: Motion in a Plane', link: 'https://drive.google.com/file/d/1UaPPZ4zQqjc4i24VAJq1RdTUn3VtIhFY/view?usp=drive_link' },
+                  { id: 'c11-phy-4', title: 'Chapter 4: Laws of Motion', link: 'https://drive.google.com/file/d/1M_I8q-VL08DKa6Ziv1gyYQJgplTR9bpu/view?usp=drive_link' },
+                  { id: 'c11-phy-5', title: 'Chapter 5: Work Energy & Power', link: 'https://drive.google.com/file/d/1HDp_gBaYENgOZjI1bX8pm9AqlSwPkNVI/view?usp=drive_link' },
+                  { id: 'c11-phy-6', title: 'Chapter 6: System of Particles', link: 'https://drive.google.com/file/d/1bZsBUQn7UzY3mgRuduXsSOM61rgqTCB4/view?usp=drive_link' },
+                  { id: 'c11-phy-7', title: 'Chapter 7: Gravitation', link: 'https://drive.google.com/file/d/1fno8xB6LvAO66ZMxvN1aJYoBmnEHNTYd/view?usp=drive_link' },
+                  { id: 'c11-phy-8', title: 'Chapter 8: Mechanical Properties of Solids', link: 'https://drive.google.com/file/d/1sP_HXeAnvaXlW1OZoQQ1eQnQuHblxWFD/view?usp=drive_link' },
+                  { id: 'c11-phy-9', title: 'Chapter 9: Mechanical Properties of Fluids', link: 'https://drive.google.com/file/d/1FB4yNOQMNIsERGAtIPnhkrAEGX_JrEtX/view?usp=drive_link' },
+                  { id: 'c11-phy-10', title: 'Chapter 10: Thermal Properties of Matter', link: 'https://drive.google.com/file/d/1aduyW-UlgfcTN83WVY6Pyupjc1pX0fNS/view?usp=drive_link' },
+                  { id: 'c11-phy-11', title: 'Chapter 11: Thermodynamics', link: 'https://drive.google.com/file/d/1G42pdreZn03c4e4m_KhYHhH7X1e188Qa/view?usp=drive_link' },
+                  { id: 'c11-phy-12', title: 'Chapter 12: Kinetic Theory of Gases', link: 'https://drive.google.com/file/d/1PXh3VZJ-kKnAyeEFhsxxK28iE9q1Bgp8/view?usp=drive_link' },
+                  { id: 'c11-phy-13', title: 'Chapter 13: Oscillations', link: 'https://drive.google.com/file/d/1eaKFWm0SJ8SvNRLZTtBHlNJOme4so5Z5/view?usp=drive_link' },
+                  { id: 'c11-phy-14', title: 'Chapter 14: Waves', link: 'https://drive.google.com/file/d/1FXpock0B5KebJL5CsfL6vOj8N3wS0Gi8/view?usp=drive_link' },
+
+                ] 
+              },
+              { id: 'c11-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c11-math-1', title: 'Chapter 1: Sets', link: 'https://drive.google.com/file/d/1dKVazEyEKAfQjWsK8EGWldFXFJXTqvOh/view?usp=drive_link' },
+                  { id: 'c11-math-2', title: 'Chapter 2: Relations & Functions', link: 'https://drive.google.com/file/d/1_GjHlHOqWH0mmRMIn0zAUhxlYk26ranJ/view?usp=drive_link' },
+                  { id: 'c11-math-3', title: 'Chapter 3: Trigonometric Functions', link: 'https://drive.google.com/file/d/1RDh9nODPLt0sOmFxucF4D2L09REKnxjB/view?usp=drive_link' },
+                  { id: 'c11-math-4', title: 'Chapter 4: Complex Number', link: 'https://drive.google.com/file/d/1rTJccjgaiVCjfuvqSk3-R1PVAFpO72U5/view?usp=drive_link' },
+                  { id: 'c11-math-5', title: 'Chapter 5: Linear Inequations', link: 'https://drive.google.com/file/d/1htPZuyrEJLVm-3If3W-RDORsvIKUL1Jo/view?usp=drive_link' },
+                  { id: 'c11-math-6', title: 'Chapter 6: Permutations & Combinations', link: 'https://drive.google.com/file/d/1sb9MtoH9kpNDznL5B1jaAYiZtsfq2b0c/view?usp=drive_link' },
+                  { id: 'c11-math-7', title: 'Chapter 7: Binomial Theorem', link: 'https://drive.google.com/file/d/1kY79KTrfaWyXhWMozW7eAFPpsW1pN97q/view?usp=drive_link' },
+                  { id: 'c11-math-8', title: 'Chapter 8: Sequences & Series', link: 'https://drive.google.com/file/d/116pXbF4IZM-93yFCUBxshITvWJHHhz7Z/view?usp=drive_link' },
+                  { id: 'c11-math-9', title: 'Chapter 9: Straight Line', link: 'https://drive.google.com/file/d/1O9W4hFOuBLHlqA3BKW28lElg7o7gLxHQ/view?usp=drive_link' },
+                  { id: 'c11-math-10', title: 'Chapter 10: Conic Sections', link: 'https://drive.google.com/file/d/1sd4cotMpGwuyqb29Z2PzyT4zwGBpI8oL/view?usp=drive_link' },
+                  { id: 'c11-math-11', title: 'Chapter 11: Introduction to 3D', link: 'https://drive.google.com/file/d/1w5ZyH3aBQDPw7ZNbUs2b7HGqa8dbrV_X/view?usp=drive_link' },
+                  { id: 'c11-math-12', title: 'Chapter 12: Limits & Derivatives', link: 'https://drive.google.com/file/d/1EtQ8MGF04JcsrQS0dxx0uuEIpQW32QET/view?usp=drive_link' },
+                  { id: 'c11-math-13', title: 'Chapter 13: Statistics', link: 'https://drive.google.com/file/d/1qecN6wsKqy4G4mjCTMn_jpdYHE7bhvFn/view?usp=drive_link' },
+                  { id: 'c11-math-14', title: 'Chapter 14: Probability', link: 'https://drive.google.com/file/d/1oPOTW-wD3D06gBUupBeya6Xx9NPTUXNL/view?usp=drive_link' },
+
+                ] 
+               },
+              { id: 'c11-chem', name: 'Chemistry', chapters: generateChapters('Chemistry', 12) }
+            ],
+
+            "Class 12": [
+              { id: 'c12-phy', 
+                name: 'Physics', 
+                chapters: [
+                  { id: 'c12-phy-1', title: 'Chapter 1: Electric Charges & Fields', link: 'https://drive.google.com/file/d/11nDeJWl3TX6w9K8_hNMjUjQ4mmidfPBD/view?usp=drive_link' },
+                  { id: 'c12-phy-2', title: 'Chapter 2: Electrostatic Potential & Charges', link: 'https://drive.google.com/file/d/1jpSxAcf6PIEXUmLRkIQVBmVgH2Z8me6F/view?usp=drive_link' },
+                  { id: 'c12-phy-3', title: 'Chapter 3: Current Electricity', link: 'https://drive.google.com/file/d/1uJS-LcLnyPpdP1tqxTJvE535Ug5bd4mk/view?usp=drive_link' },
+                  { id: 'c12-phy-4', title: 'Chapter 4: Moving Charges & Magnetism', link: 'https://drive.google.com/file/d/1m4fYCyS1RV81rz3IC9DxiTikEBYZ4hza/view?usp=drive_link' },
+                  { id: 'c12-phy-5', title: 'Chapter 5: Magnetism & Matter', link: 'https://drive.google.com/file/d/10uQx2Vj3J3HebtYzAehqbvc6JUg1nB4r/view?usp=drive_link' },
+                  { id: 'c12-phy-6', title: 'Chapter 6: Electro Magnetic Induction', link: 'https://drive.google.com/file/d/1pnO8Z-PKy-Z1XKZWK7buvARVB1NAFKpx/view?usp=drive_link' },
+                  { id: 'c12-phy-7', title: 'Chapter 7: Alternating Current', link: 'https://drive.google.com/file/d/1j58yoQNYLWDqhJmz9-0L_m-UQMImZIbc/view?usp=drive_link' },
+                  { id: 'c12-phy-8', title: 'Chapter 8: Electro Magnetic Waves', link: 'https://drive.google.com/file/d/13DaOaE6vVdUI_LXJ_ByYuf2x3sZvBNRn/view?usp=drive_link' },
+                  { id: 'c12-phy-9', title: 'Chapter 9: Ray Optics', link: 'https://drive.google.com/file/d/19cyXV-4eSFbyt223bYkhPAiWiGS54aaB/view?usp=drive_link' },
+                  { id: 'c12-phy-10', title: 'Chapter 10: Wave Optics', link: 'https://drive.google.com/file/d/1HbsNyT5cHOU9DOyWpa-n-X55XZEDVzny/view?usp=drive_link' },
+                  { id: 'c12-phy-11', title: 'Chapter 11: Dual Nature of Radiations & Light', link: 'https://drive.google.com/file/d/1sMimpDq5A_rRiCUTV9-9fepVJbOU8RoI/view?usp=drive_link' },
+                  { id: 'c12-phy-12', title: 'Chapter 12: Atoms', link: 'https://drive.google.com/file/d/11RwjBm5auUJqKFW8DjOMStSIgoMBZliH/view?usp=drive_link' },
+                  { id: 'c12-phy-13', title: 'Chapter 13: Nuclei', link: 'https://drive.google.com/file/d/1qB-6UgzDSW_iRweccPr9EROQWAphl42k/view?usp=drive_link' },
+                  { id: 'c12-phy-14', title: 'Chapter 14: Semiconductor', link: 'https://drive.google.com/file/d/1y3g8fOYKx15x9ABcLhTiEUvqDkhU3eyU/view?usp=drive_link' },
+
+                ]
+               },
+              { id: 'c12-math', 
+                name: 'Mathematics', 
+                chapters: [
+                  { id: 'c12-math-1', title: 'Chapter 1: Relations & Functions', link: 'https://drive.google.com/file/d/1WYrN3Sdtq7IPimFydExlVRsk6TtVHPE2/view?usp=drive_link' },
+                  { id: 'c12-math-2', title: 'Chapter 2: Invers Trigonometric Functions', link: 'https://drive.google.com/file/d/1SKbzV445ztakiE3Mxb297VMnmXR13uXV/view?usp=drive_link' },
+                  { id: 'c12-math-3', title: 'Chapter 3: Matrices', link: 'https://drive.google.com/file/d/1UVdo1_jQzgE_qavodm3_4vuvjKUfRylb/view?usp=drive_link' },
+                  { id: 'c12-math-4', title: 'Chapter 4: Determinants', link: 'https://drive.google.com/file/d/12bNjJuqu4Ji-IJeUokbQ6Tsfysr0g_pq/view?usp=drive_link' },
+                  { id: 'c12-math-5', title: 'Chapter 5: Continuity & Differentiability', link: 'https://drive.google.com/file/d/1bzpJzoT4tzrZTZYa3CyvL4-v9dN3_w_r/view?usp=drive_link' },
+                  { id: 'c12-math-6', title: 'Chapter 6: Applications of derivatives', link: 'https://drive.google.com/file/d/1_9VUTKC-I_zjnaXK2sZFBC_iBNhYPbAB/view?usp=drive_link' },
+                  { id: 'c12-math-7', title: 'Chapter 7: Integrations', link: 'https://drive.google.com/file/d/1-Dh9gYHabXFXLPyVucHOtv41Rpu0cqa6/view?usp=drive_link' },
+                  { id: 'c12-math-8', title: 'Chapter 8: Applications of Integrations', link: 'https://drive.google.com/file/d/1mQkCOCvxWLWx2jWJ_P4xMk8qCKNMG9ej/view?usp=drive_link' },
+                  { id: 'c12-math-9', title: 'Chapter 9: Differential Equations', link: 'https://drive.google.com/file/d/1URXEeGn2FWCGOZtyNmRTftRBAQ6gQEEm/view?usp=drive_link' },
+                  { id: 'c12-math-10', title: 'Chapter 10: Vectors', link: 'https://drive.google.com/file/d/1GwSbsHibg9lHmob_hcmv74jekCOh7vzv/view?usp=drive_link' },
+                  { id: 'c12-math-11', title: 'Chapter 11: 3-Dimension', link: 'https://drive.google.com/file/d/1n7LPsLn70wVc_ZVaZhyP-bo4UOqm1URj/view?usp=drive_link' },
+                  { id: 'c12-math-12', title: 'Chapter 12: Linear Programming', link: 'https://drive.google.com/file/d/13SZZQUCxrOKN6rS5wIAjqJDTHsMg_a7T/view?usp=drive_link' },
+                  { id: 'c12-math-13', title: 'Chapter 13: Probability', link: 'https://drive.google.com/file/d/1CS6z--bh0PmvQO9V7JgRt-amAvSJJMW-/view?usp=drive_link' },
+
+
+                ] 
+
+               },
+              { id: 'c12-chem', name: 'Chemistry', chapters: generateChapters('Chemistry', 16) },
+
+              { id: 'c12-bio', name: 'Biology', chapters: generateChapters('Biology', 12) }
             ]
+
+
           }
         },
         COMPETITIVE: {
@@ -612,8 +696,42 @@
             { id: 'jee-math', name: 'Mathematics', chapters: generateChapters('Calculus', 20) }
           ],
           "NEET": [
-            { id: 'neet-bio', name: 'Biology', chapters: generateChapters('Zoology', 25) },
-            { id: 'neet-phy', name: 'Physics', chapters: generateChapters('Physics', 18) }
+            { id: 'neet-phy', 
+            name: 'Physics', 
+            chapters: [
+                  { id: 'neet-phy-1', title: 'Chapter 1: Unit & Dimension', link: 'https://drive.google.com/file/d/17HMeV6cqZNhL9C6YhdqB-XFTR-tasRmr/view?usp=drive_link' },
+                  { id: 'neet-phy-2', title: 'Chapter 2: Motion in a Straight Line', link: 'https://drive.google.com/file/d/1hbPpy-T8V3IjR2kSUgvVSEmypp40JPIs/view?usp=drive_link' },
+                  { id: 'neet-phy-3', title: 'Chapter 3: Motion in a Plane', link: 'https://drive.google.com/file/d/1EfG4n_xPgTPLLNbb3Tr5r1-g_E_wcIGH/view?usp=drive_link' },
+                  { id: 'neet-phy-4', title: 'Chapter 4: Laws of Motion', link: 'https://drive.google.com/file/d/1MEsrTP_ZYPM8-ZQ5P3gpgSdU305x1MQL/view?usp=drive_link' },
+                  { id: 'neet-phy-5', title: 'Chapter 5: Work Energy & Power', link: 'https://drive.google.com/file/d/1qu32b25Lsnd62aU4NJ1jLgEK7AhlKhp5/view?usp=drive_link' },
+                  { id: 'neet-phy-6', title: 'Chapter 6: System of Particles', link: 'https://drive.google.com/file/d/1L0IeB8osOmRQkMKyO04QjTBZUf7q5mES/view?usp=drive_link' },
+                  { id: 'neet-phy-7', title: 'Chapter 7: Gravitation', link: 'https://drive.google.com/file/d/1oc-nY7rj20WU7c3Xrecs6qEcGQdpj5zr/view?usp=drive_link' },
+                  { id: 'neet-phy-8', title: 'Chapter 8: Mechanical Properties of Solids', link: 'https://drive.google.com/file/d/1NCf77VstfZhtAUVyiwq7yaZqsKIG0Y4B/view?usp=drive_link' },
+                  { id: 'neet-phy-9', title: 'Chapter 9: Mechanical Properties of Fluids', link: 'https://drive.google.com/file/d/1V7fTxwI2rcJbH3yp_kklCr_VRyjeRNad/view?usp=drive_link' },
+                  { id: 'neet-phy-10', title: 'Chapter 10: Thermal Properties of Matter', link: 'https://drive.google.com/file/d/1kzKaAIqeTo13XZ7S6Qk5oJ_dLD4RY2Zp/view?usp=drive_link' },
+                  { id: 'neet-phy-11', title: 'Chapter 11: Thermodynamics', link: 'https://drive.google.com/file/d/1jX-uhQT9U4Bm2g9dyEl_1zWHOtSjJSZJ/view?usp=drive_link' },
+                  { id: 'neet-phy-12', title: 'Chapter 12: Kinetic Theory of Gases', link: 'https://drive.google.com/file/d/1av6rpty6ycAXSIr5XcTfUWU-WeIwokj0/view?usp=drive_link' },
+                  { id: 'neet-phy-13', title: 'Chapter 13: Oscillations', link: 'https://drive.google.com/file/d/1s-vhiVaRopw20B3df0cQs0qZfZUM3T0F/view?usp=drive_link' },
+                  { id: 'neet-phy-14', title: 'Chapter 14: Waves', link: 'https://drive.google.com/file/d/1Tpo-xBVmPz6NlpVq22tp2EDh4nGOUA9B/view?usp=drive_link' },
+                  { id: 'neet-phy-1', title: 'Chapter 1: Electric Charges & Fields', link: 'https://drive.google.com/file/d/16LuNJQovaktZeq9y2K_r43eRjZme4flS/view?usp=drive_link' },
+                  { id: 'neet-phy-2', title: 'Chapter 2: Electrostatic Potential & Charges', link: 'https://drive.google.com/file/d/1s-0b_FWmnJB57AVA7o0f5t-wF_TxWqs6/view?usp=drive_link' },
+                  { id: 'neet-phy-3', title: 'Chapter 3: Current Electricity', link: 'https://drive.google.com/file/d/1tkmzUYwUcRTer-F5jngO4k-DIhOwnl6K/view?usp=drive_link' },
+                  { id: 'neet-phy-4', title: 'Chapter 4: Moving Charges & Magnetism', link: 'https://drive.google.com/file/d/1j1IQtwZ_usi42hs5i25dugXt3vpFyMA0/view?usp=drive_link' },
+                  { id: 'neet-phy-5', title: 'Chapter 5: Magnetism & Matter', link: 'https://drive.google.com/file/d/1QZKTkyX7sYVs1ti1oTsSJ6VMb1V_g-9o/view?usp=drive_link' },
+                  { id: 'neet-phy-6', title: 'Chapter 6: Electro Magnetic Induction', link: 'https://drive.google.com/file/d/1oMIuDLR9T2iIweJnK0VAdQeKH8gfR6xl/view?usp=drive_link' },
+                  { id: 'neet-phy-7', title: 'Chapter 7: Alternating Current', link: 'https://drive.google.com/file/d/1nlOlCrb2aF7OATHZBf7wlkz6U-CycTX6/view?usp=drive_link' },
+                  { id: 'neet-phy-8', title: 'Chapter 8: Electro Magnetic Waves', link: 'https://drive.google.com/file/d/1MjMueo0e3lDVBE0qtYzmCvfzjIOm3f-u/view?usp=drive_link' },
+                  { id: 'neet-phy-9', title: 'Chapter 9: Ray Optics', link: 'https://drive.google.com/file/d/1Xm9l0EHsh6V4JFzPRHAVQudlk-CS5QOu/view?usp=drive_link' },
+                  { id: 'neet-phy-10', title: 'Chapter 10: Wave Optics', link: 'https://drive.google.com/file/d/1RWsQCtqiw_75gMqcKicdDWUJp5KybJ4P/view?usp=drive_link' },
+                  { id: 'neet-phy-11', title: 'Chapter 11: Dual Nature of Radiations & Light', link: 'https://drive.google.com/file/d/1vn-ywxb0QtG7XnYbhttj0zuT2llWKkuj/view?usp=drive_link' },
+                  { id: 'neet-phy-12', title: 'Chapter 12: Atoms', link: 'https://drive.google.com/file/d/1AWRT_AJU2Hckzho6auqeJaCH8RRMUTiS/view?usp=drive_link' },
+                  { id: 'neet-phy-13', title: 'Chapter 13: Nuclei', link: 'https://drive.google.com/file/d/1xb5qk7lo7hrGsRL93ohzRDkon4uw7LZR/view?usp=drive_link' },
+                  { id: 'neet-phy-14', title: 'Chapter 14: Semiconductor', link: 'https://drive.google.com/file/d/1RIEh6ErbZTxVbjorDkzPPyNk7nOe-Ua1/view?usp=drive_link' },
+
+                ]
+              },
+            { id: 'neet-bio', name: 'Biology', chapters: generateChapters('Zoology', 25) }
+            
           ],
           "SSC": [
             { id: 'ssc-quant', name: 'Quant Aptitude', chapters: generateChapters('Quant', 15) },
